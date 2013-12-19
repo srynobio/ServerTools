@@ -1,6 +1,6 @@
 <strong>ServerTools</strong>
 
-<strong>Introductions</strong>
+<strong>Introduction</strong>
 
 Just a quick collection of scripts to help govern the bioinfomatic wild-wild-west.
 
