@@ -1,10 +1,10 @@
 <strong>ServerTools</strong>
 
-<strong>INTRODUCTION</strong>
+<strong>Introductions</strong>
 
 Just a quick collection of scripts to help govern the bioinfomatic wild-wild-west.
 
-<strong>CONTENTS</strong>
+<strong>Contents</strong>
 
 Somewhat sparce but will grow as ideas and issue come up.
 
@@ -12,7 +12,7 @@ du_info.pl
   Perl script designed to be used as cron job, to check for disk space above 95% and issue email of top offenders.
 
 
-<strong>AUTHOR</strong>
+<strong>Author</strong>
 Shawn Rynearson &lt;shawn.rynearson@gmail.com&gt;
 
 <strong>LICENCE AND COPYRIGHT</strong>
