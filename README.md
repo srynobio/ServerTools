@@ -6,11 +6,10 @@ Just a quick collection of scripts to help govern the bioinfomatic wild-wild-wes
 
 <strong>Contents</strong>
 
-Somewhat sparce but will grow as ideas and issue come up.
-
-du_info.pl
-  Perl script designed to be used as cron job, to check for disk space above 95% and issue email of top offenders.
-
+<ul>
+	<li>du_info.pl - Perl script designed to be used as cron job, to check for disk space above 95% and issue email of top offenders</li>
+	<li>Somewhat sparce but will grow as ideas and issue come up.</li>
+</ul>
 
 <strong>Author</strong>
 Shawn Rynearson &lt;shawn.rynearson@gmail.com&gt;
