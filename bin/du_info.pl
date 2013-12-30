@@ -34,7 +34,7 @@ if ( @warn ) {
 
   my $count;
   foreach my $drive (@drive) {
-      my $cmd = "du $drive |sort -rn |head -25 > du_sort_" . ++$count;
+      my $cmd = "du $drive |sort -rn |head -30 > du_sort_" . ++$count;
       $pm->start and next;
       `$cmd`;
       $pm->finish;
@@ -45,5 +45,5 @@ if ( @warn ) {
 `cat du_sort_* > $output`;
 system("mail -s \"du_info from: $host the following drives are > 95% full\" $mail < $output");
 sleep(60);
-`rm du_sort_* du_output`;
+`rm du_sort_* $output`;
 
