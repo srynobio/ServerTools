@@ -22,7 +22,7 @@ foreach my $df (@diskSpace) {
 
   next unless (int $results[4]);
 
-  if ( $results[4] >= 95 ) {
+  if ( $results[4] >= 85 ) {
     push @warn, $results[0];
     push @drive, $results[-1];
   }
@@ -32,7 +32,7 @@ if ( @warn ) {
 
   my $count;
   foreach my $drive (@drive) {
-    my $cmd = "du $drive |sort -rn |head -40 > du_sort_" . ++$count;
+    my $cmd = "du $drive |sort -rn |head -50 > du_sort_" . ++$count;
     $pm->start and next;
     `$cmd`;
     $pm->finish;
@@ -40,7 +40,7 @@ if ( @warn ) {
   $pm->wait_all_children;
 
   `cat du_sort_* > du_total`;
-  system("mail -s \"du_info from: $host the following drives are > 95% full\" $mail < du_total");
+  system("mail -s \"du_info from: $host the following drives are > 85% full\" $mail < du_total");
   sleep(60);
   `rm du_sort_* du_total`;
 }
