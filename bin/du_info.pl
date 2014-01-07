@@ -3,10 +3,8 @@ use warnings;
 use strict;
 use Parallel::ForkManager;
 
-my $pm = Parallel::ForkManager->new('6');
-
-my $output = $ARGV[0] or die "Please add output filename\n";
-my $mail   = $ARGV[1] or die "Please add email\n";
+my $pm   = Parallel::ForkManager->new('6');
+my $mail = $ARGV[0] or die "Please add email\n";
 
 my $host = `hostname`;
 chomp($host);
@@ -34,16 +32,16 @@ if ( @warn ) {
 
   my $count;
   foreach my $drive (@drive) {
-      my $cmd = "du $drive |sort -rn |head -30 > du_sort_" . ++$count;
-      $pm->start and next;
-      `$cmd`;
-      $pm->finish;
-    }
-    $pm->wait_all_children;
-}
+    my $cmd = "du $drive |sort -rn |head -40 > du_sort_" . ++$count;
+    $pm->start and next;
+    `$cmd`;
+    $pm->finish;
+  }
+  $pm->wait_all_children;
 
-`cat du_sort_* > $output`;
-system("mail -s \"du_info from: $host the following drives are > 95% full\" $mail < $output");
-sleep(60);
-`rm du_sort_* $output`;
+  `cat du_sort_* > du_total`;
+  system("mail -s \"du_info from: $host the following drives are > 95% full\" $mail < du_total");
+  sleep(60);
+  `rm du_sort_* du_total`;
+}
 
