@@ -7,7 +7,7 @@ Just a quick collection of scripts to help govern the bioinfomatic wild-wild-wes
 <strong>Contents</strong>
 
 <ul>
-	<li>du_info.pl - Perl script designed to be used as cron job, to check for disk space above 95% and issue email of top offenders</li>
+	<li>du_info.pl - Perl script designed to be used as cron job, to check for disk space above 85% and issue email of top offenders</li>
 	<li>load_monitor.pl - Perl script designed to be used as cron job, to check load average and email when above critical point.</li>
 </ul>
 
