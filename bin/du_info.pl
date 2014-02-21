@@ -14,7 +14,7 @@ my (@warn, @drive);
 foreach my $df (@diskSpace) {
   chomp $df;
 
-  next if $df =~ /^Filesystem|^pathway|^bdarchive/;
+  next if $df =~ /^Filesystem|^pathway|^bdarchive|^crosman/;
   $df =~ s/\s+/:/g;
 
   my @results = split ":", $df;
@@ -31,17 +31,22 @@ foreach my $df (@diskSpace) {
 if ( @warn ) {
 
   my $count;
+  my @du_collect;
   foreach my $drive (@drive) {
-    my $cmd = "du $drive |sort -rn |head -50 > du_sort_" . ++$count;
+    my $du_file = "du_sort_" . ++$count;
+    my $cmd = "du $drive |sort -rn |head -50 > $du_file";
+    push @du_collect, $du_file;
     $pm->start and next;
     `$cmd`;
     $pm->finish;
   }
   $pm->wait_all_children;
 
-  `cat du_sort_* > du_total`;
-  system("mail -s \"du_info from: $host the following drives are > 85% full\" $mail < du_total");
-  sleep(60);
-  `rm du_sort_* du_total`;
+  foreach my $dirs (@du_collect) {
+    chomp $dirs;
+    system("mail -s \"du_info from: $host the following drives are > 85% full\" $mail < $dirs");
+    sleep(60);
+  }
+  `rm du_sort_*`;
 }
 
