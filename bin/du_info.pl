@@ -14,7 +14,7 @@ my (@warn, @drive);
 foreach my $df (@diskSpace) {
   chomp $df;
 
-  next if $df =~ /^Filesystem|^pathway|^bdarchive|^crosman/;
+  next if $df =~ /^Filesystem|^pathway|^bdarchive|^crosman|^archive/;
   $df =~ s/\s+/:/g;
 
   my @results = split ":", $df;
