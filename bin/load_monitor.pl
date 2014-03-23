@@ -35,7 +35,7 @@ if ( $pros < $av[0] ) {
         next if ( $jobs =~ /PID/ );
 
         my @groups = split / /, $jobs;
-	next if ( $groups[3] eq 'root');
+        next if ( $groups[3] eq 'root');
 
         next unless $groups[1] > 300;
 

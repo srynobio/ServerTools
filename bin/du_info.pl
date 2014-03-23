@@ -14,8 +14,6 @@ my ( @warn, @drive );
 foreach my $df (@diskSpace) {
     chomp $df;
 
-    print $df, "\n";
-
     next if $df =~ /^Filesystem|^pathway|^bdarchive|^crosman|^archive/;
     $df =~ s/\s+/:/g;
 
@@ -36,7 +34,7 @@ if (@warn) {
     my @du_collect;
     foreach my $drive (@drive) {
 
-        if ( $drive =~ /\// ) {
+        if ( $drive =~ /\/$/ ) {
             $drive =~ s/\//\/home/;
         }
 
