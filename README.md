@@ -2,7 +2,7 @@
 
 <strong>Introduction</strong>
 
-Just a quick collection of scripts to help govern the bioinfomatic wild-wild-west.
+Just a quick collection of scripts to help govern the bioinformatic wild-wild-west.
 
 <strong>Contents</strong>
 
