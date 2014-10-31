@@ -7,8 +7,11 @@ Just a quick collection of scripts to help govern the bioinformatic wild-wild-we
 <strong>Contents</strong>
 
 <ul>
-	<li>du_info.pl - Perl script designed to be used as cron job, to check for disk space above 85% and issue email of top offenders</li>
-	<li>load_monitor.pl - Perl script designed to be used as cron job, to check load average and email when above critical point.</li>
+	<strong>standalone</strong>
+		<li>du_info.pl - Perl script designed to be used as cron job, to check for disk space above 85% and issue email of top offenders</li>
+		<li>load_monitor.pl - Perl script designed to be used as cron job, to check load average and email when above critical point.</li>
+	<strong>rex_scripts</strong>
+		<li>ServerGovern.pl - Script using the perl rex system to govern cpu, memory, du usage on a group of servers</li>
 </ul>
 
 <strong>Author</strong>
@@ -46,5 +49,5 @@ THE POSSIBILITY OF SUCH DAMAGES.
 
 &nbsp;
 
-&nbsp;))
+&nbsp;
 
