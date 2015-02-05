@@ -2,13 +2,12 @@
 
 <strong>Introduction</strong>
 
-Just a quick collection of scripts to help govern the bioinformatic wild-wild-west.
+Collection of scripts to help govern the CPU Usage, memory, disk space of our linux servers.
 
 <strong>Contents</strong>
 
 <ul>
-	<strong>rex_scripts</strong>
-		<li>ServerGovern.pl - Script using the perl rex system to govern cpu, memory, du usage on a group of servers</li>
+	<li>ServerGovern.pl - Script using the perl rex system to govern cpu, memory, du usage on a group of servers</li>
 </ul>
 
 <strong>Author</strong>
